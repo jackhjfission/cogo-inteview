@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# run command. Will become a dockercompose file eventually
 sudo docker run -it --rm \
     -p 8888:8888 \
     --mount type=bind,source=$(dirname $SSH_AUTH_SOCK),target=/ssh-agent \
