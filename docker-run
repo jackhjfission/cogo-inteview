@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# run command. Will become a dockercompose file eventually
+sudo docker run -it --rm \
+    -p 8888:8888 \
+    --mount type=bind,source=$(dirname $SSH_AUTH_SOCK),target=/ssh-agent \
+    --mount type=bind,source=$(dirname $(readlink -f $0)),target=/home/jovyan/work \
+    cogo-interview
